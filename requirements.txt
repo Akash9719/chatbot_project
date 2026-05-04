@@ -1,6 +1,4 @@
-fastapi
-uvicorn
-requests
 streamlit
+openai
 faiss-cpu
 sentence-transformers
