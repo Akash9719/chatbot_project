@@ -7,7 +7,7 @@ from groq import Groq
 # -----------------------
 # Setup
 # -----------------------
-client = Groq(api_key=st.secrets["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"])
+client = Groq(api_key=st.secrets["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"])
 embed_model = SentenceTransformer("all-MiniLM-L6-v2")
 
 # -----------------------
