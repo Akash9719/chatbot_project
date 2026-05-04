@@ -12,21 +12,40 @@ client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 embed_model = SentenceTransformer("all-MiniLM-L6-v2")
 
 # -----------------------
-# Load Knowledge
+# Load Knowledge (FIXED PATH)
 # -----------------------
 @st.cache_resource
 def load_vector_store():
-    with open("knowledge.txt", "r") as f:
+    # Get path of current file (app.py)
+    current_dir = os.path.dirname(__file__)
+
+    # Build correct path to knowledge.txt
+    file_path = os.path.join(current_dir, "knowledge.txt")
+
+    # Debug (optional)
+    # st.write("Looking for file at:", file_path)
+
+    if not os.path.exists(file_path):
+        st.error(f"❌ knowledge.txt not found at: {file_path}")
+        st.stop()
+
+    # Read file
+    with open(file_path, "r", encoding="utf-8") as f:
         text = f.read()
 
+    # Split into chunks
     chunks = text.split("\n\n")
+
+    # Create embeddings
     embeddings = embed_model.encode(chunks)
 
+    # Create FAISS index
     index = faiss.IndexFlatL2(len(embeddings[0]))
     index.add(np.array(embeddings))
 
     return index, chunks
 
+# Load once
 index, chunks = load_vector_store()
 
 # -----------------------
@@ -38,6 +57,7 @@ if "history" not in st.session_state:
 # -----------------------
 # UI
 # -----------------------
+st.set_page_config(page_title="Rishikirti AI Assistant")
 st.title("💬 Rishikirti AI Assistant")
 
 user_input = st.chat_input("Ask about our services...")
@@ -63,6 +83,12 @@ if user_input:
     prompt = f"""
 You are a professional business assistant for Rishikirti Technologies.
 
+Your goals:
+- Explain services clearly
+- Ask follow-up questions
+- Encourage user to share requirements
+- Sound like a consultant
+
 Context:
 {context}
 
@@ -73,11 +99,12 @@ User: {user_input}
 Assistant:
 """
 
-    response = client.chat.completions.create(
-        model="llama3-8b-8192",
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.7
-    )
+    with st.spinner("Thinking..."):
+        response = client.chat.completions.create(
+            model="llama3-8b-8192",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7
+        )
 
     bot_reply = response.choices[0].message.content
 
@@ -90,5 +117,7 @@ Assistant:
 # Display Chat
 # -----------------------
 for h in st.session_state.history:
-    st.chat_message("user").write(h["user"])
-    st.chat_message("assistant").write(h["bot"])
+    with st.chat_message("user"):
+        st.write(h["user"])
+    with st.chat_message("assistant"):
+        st.write(h["bot"])
