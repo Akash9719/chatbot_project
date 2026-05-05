@@ -3,3 +3,5 @@ groq
 faiss-cpu
 sentence-transformers
 numpy
+gspread
+google-auth
