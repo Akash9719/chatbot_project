@@ -1,14 +1,20 @@
+### About Rishikirti Technologies
+Rishikirti Technologies provides ERP customization, data analytics, and professional design services for businesses.
+
 ### ERP Customization
-Rishikirti Technologies specializes in ERP customization tailored to business workflows. We help companies automate operations, reduce manual work, and improve efficiency.
+We specialize in customizing ERP systems based on business workflows. We help companies automate operations, reduce manual effort, and improve efficiency.
 
 ### Data Analytics
-We provide data analytics services including dashboards, reporting, KPI tracking, and business insights using tools like Power BI and advanced analytics techniques.
+We provide dashboards, reporting, KPI tracking, and business insights using tools like Power BI and advanced analytics.
 
-### Professional Design
-We offer UI/UX design, branding, and product design services for web and mobile applications.
+### Design Services
+We offer UI/UX design, product design, and branding services for web and mobile platforms.
 
 ### Industries
-We work with manufacturing, retail, and service-based companies.
+We work with manufacturing, retail, and service-based businesses.
 
 ### Value Proposition
 We help businesses improve decision-making, optimize processes, and scale efficiently using technology.
+
+### Lead Strategy
+Always ask the user about their business needs, challenges, and requirements. Encourage them to share details for better solutions.
