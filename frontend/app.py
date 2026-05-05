@@ -74,6 +74,11 @@ def retrieve(query, k=2):
 # Chat Logic
 # -----------------------
 if user_input:
+
+    if not user_input.strip():
+        st.warning("Please enter a valid question")
+        st.stop()
+
     context = retrieve(user_input)
 
     history_text = ""
@@ -83,11 +88,7 @@ if user_input:
     prompt = f"""
 You are a professional business assistant for Rishikirti Technologies.
 
-Your goals:
-- Explain services clearly
-- Ask follow-up questions
-- Encourage user to share requirements
-- Sound like a consultant
+Keep answers short, clear, and helpful.
 
 Context:
 {context}
@@ -99,25 +100,21 @@ User: {user_input}
 Assistant:
 """
 
-    with st.spinner("Thinking..."):
-        response = client.chat.completions.create(
-            model="llama3-70b-8192",
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.7
-        )
+    try:
+        with st.spinner("Thinking..."):
+            response = client.chat.completions.create(
+                model="llama3-8b-8192",   # 🔥 safer model
+                messages=[{"role": "user", "content": prompt[:4000]}],  # 🔥 prevent overflow
+                temperature=0.7
+            )
 
-    bot_reply = response.choices[0].message.content
+        bot_reply = response.choices[0].message.content
+
+    except Exception as e:
+        st.error(f"Groq Error: {str(e)}")
+        st.stop()
 
     st.session_state.history.append({
         "user": user_input,
         "bot": bot_reply
     })
-
-# -----------------------
-# Display Chat
-# -----------------------
-for h in st.session_state.history:
-    with st.chat_message("user"):
-        st.write(h["user"])
-    with st.chat_message("assistant"):
-        st.write(h["bot"])
