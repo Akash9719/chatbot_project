@@ -189,7 +189,10 @@ consent = st.checkbox("I agree to share my information for contact purposes")
 
 if st.button("Submit"):
     if name and email and requirement and consent:
-        save_to_google_sheets(name, email, requirement)
-        st.success("✅ Thank you! Our team will contact you soon.")
+        Try:
+            save_to_google_sheets(name, email, requirement)
+            st.success("✅ Thank you! Our team will contact you soon.")
+        Except Exception as e:
+            st.error(f"Error saving leads: {str(e)}")
     else:
         st.warning("Please fill all fields and accept consent")
