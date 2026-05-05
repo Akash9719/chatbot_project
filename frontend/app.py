@@ -121,4 +121,4 @@ Assistant:
 
     # Show assistant response
     with st.chat_message("assistant"):
-        st.write(bot_reply)
+        st.write("Context used:", context)
