@@ -192,7 +192,7 @@ if st.button("Submit"):
         try:
             save_to_google_sheets(name, email, requirement)
             st.success("✅ Thank you! Our team will contact you soon.")
-        Except Exception as e:
+        except Exception as e:
             st.error(f"Error saving leads: {str(e)}")
     else:
         st.warning("Please fill all fields and accept consent")
