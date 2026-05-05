@@ -103,7 +103,7 @@ Assistant:
     try:
         with st.spinner("Thinking..."):
             response = client.chat.completions.create(
-                model="llama3-8b-8192",   # 🔥 safer model
+                model="llama-3.3-70b-versatile",   # 🔥 safer model
                 messages=[{"role": "user", "content": prompt[:4000]}],  # 🔥 prevent overflow
                 temperature=0.7
             )
