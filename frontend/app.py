@@ -90,7 +90,7 @@ if user_input:
     # Retrieve context
     context = retrieve(user_input)
     if not context:
-    context = "Rishikirti Technologies provides ERP customization, data analytics, and design services."
+        context = "Rishikirti Technologies provides ERP customization, data analytics, and design services."
 
     # Build prompt
     prompt = f"""
