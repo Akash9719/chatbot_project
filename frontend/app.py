@@ -48,7 +48,7 @@ if "messages" not in st.session_state:
 # -----------------------
 # Retrieval
 # -----------------------
-def retrieve(query, k=2):
+def retrieve(query, k=4):
     q_vec = embed_model.encode([query])
     D, I = index.search(np.array(q_vec), k)
     return "\n".join([chunks[i] for i in I[0]])
