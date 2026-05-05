@@ -68,11 +68,13 @@ def retrieve(query, k=3):
 def save_to_google_sheets(name, email, requirement):
     creds_dict = json.loads(st.secrets["GOOGLE_CREDENTIALS"])
 
-    scopes = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
+    scopes = [
+        "https://www.googleapis.com/auth/spreadsheets",
+        "https://www.googleapis.com/auth/drive"
+    ]
+
     creds = Credentials.from_service_account_info(creds_dict, scopes=scopes)
-
     client_gs = gspread.authorize(creds)
-
     sheet = client_gs.open("Leads").sheet1
 
     sheet.append_row([
@@ -83,10 +85,13 @@ def save_to_google_sheets(name, email, requirement):
     ])
 
 # -----------------------
-# Chat Memory
+# Session State
 # -----------------------
 if "messages" not in st.session_state:
     st.session_state.messages = []
+
+if "show_form" not in st.session_state:
+    st.session_state.show_form = False
 
 # -----------------------
 # Display Chat
@@ -105,7 +110,6 @@ user_input = st.chat_input("Ask about our services...")
 # -----------------------
 if user_input:
 
-    # Show user message
     st.session_state.messages.append({"role": "user", "content": user_input})
 
     with st.chat_message("user"):
@@ -116,7 +120,13 @@ if user_input:
     if not context:
         context = "Rishikirti Technologies provides ERP customization, data analytics, and design services."
 
-    # SYSTEM PROMPT (Sales + Smart)
+    # 🔥 Intent Detection
+    intent_keywords = ["price", "cost", "demo", "interested", "contact", "connect", "talk"]
+
+    if any(word in user_input.lower() for word in intent_keywords):
+        st.session_state.show_form = True
+
+    # SYSTEM PROMPT
     system_prompt = """
 You are a smart business consultant for Rishikirti Technologies.
 
@@ -131,7 +141,6 @@ Rules:
 - Be conversational and helpful
 """
 
-    # Build messages
     messages = [{"role": "system", "content": system_prompt}]
 
     for msg in st.session_state.messages[-5:]:
@@ -162,7 +171,6 @@ User Query:
         st.error(f"Groq Error: {str(e)}")
         st.stop()
 
-    # Save response
     st.session_state.messages.append({
         "role": "assistant",
         "content": bot_reply
@@ -171,28 +179,31 @@ User Query:
     with st.chat_message("assistant"):
         st.write(bot_reply)
 
-    # Smart lead trigger
-    if any(word in user_input.lower() for word in ["price", "cost", "demo", "interested", "contact"]):
-        st.info("👉 Looks like you're interested. Please fill the form below and our team will reach out!")
+    # Soft CTA
+    if st.session_state.show_form:
+        st.info("👉 Would you like to connect with our team? You can share your details below.")
 
 # -----------------------
-# Lead Capture Form
+# Lead Capture Form (ONLY ON INTENT)
 # -----------------------
-st.divider()
-st.subheader("📩 Get in Touch")
+if st.session_state.show_form:
 
-name = st.text_input("Your Name")
-email = st.text_input("Your Email")
-requirement = st.text_area("Your Requirement")
+    st.divider()
+    st.subheader("📩 Get in Touch")
 
-consent = st.checkbox("I agree to share my information for contact purposes")
+    name = st.text_input("Your Name")
+    email = st.text_input("Your Email")
+    requirement = st.text_area("Your Requirement")
 
-if st.button("Submit"):
-    if name and email and requirement and consent:
-        try:
-            save_to_google_sheets(name, email, requirement)
-            st.success("✅ Thank you! Our team will contact you soon.")
-        except Exception as e:
-            st.error(f"Error saving leads: {str(e)}")
-    else:
-        st.warning("Please fill all fields and accept consent")
+    consent = st.checkbox("I agree to share my information for contact purposes")
+
+    if st.button("Submit"):
+        if name.strip() and email.strip() and requirement.strip() and consent:
+            try:
+                save_to_google_sheets(name, email, requirement)
+                st.success("✅ Thank you! Our team will contact you soon.")
+                st.session_state.show_form = False   # hide after submit
+            except Exception as e:
+                st.error(f"Error saving leads: {str(e)}")
+        else:
+            st.warning("Please fill all fields and accept consent")
