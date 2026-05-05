@@ -48,10 +48,17 @@ if "messages" not in st.session_state:
 # -----------------------
 # Retrieval
 # -----------------------
-def retrieve(query, k=4):
+def retrieve(query, k=3):
     q_vec = embed_model.encode([query])
     D, I = index.search(np.array(q_vec), k)
-    return "\n".join([chunks[i] for i in I[0]])
+
+    # filter low-quality results
+    results = []
+    for i, score in zip(I[0], D[0]):
+        if score < 1.5:   # threshold (important)
+            results.append(chunks[i])
+
+    return "\n".join(results) if results else ""
 
 # -----------------------
 # Display existing chat
