@@ -5,12 +5,21 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 from groq import Groq
 
+# Google Sheets
+import gspread
+from google.oauth2.service_account import Credentials
+import json
+from datetime import datetime
+
 # -----------------------
-# Setup
+# Page Setup
 # -----------------------
 st.set_page_config(page_title="Rishikirti AI Assistant")
 st.title("💬 Rishikirti AI Assistant")
 
+# -----------------------
+# Setup
+# -----------------------
 client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 embed_model = SentenceTransformer("all-MiniLM-L6-v2")
 
@@ -40,28 +49,47 @@ def load_vector_store():
 index, chunks = load_vector_store()
 
 # -----------------------
-# Session Memory (CHAT FORMAT)
-# -----------------------
-if "messages" not in st.session_state:
-    st.session_state.messages = []
-
-# -----------------------
 # Retrieval
 # -----------------------
 def retrieve(query, k=3):
     q_vec = embed_model.encode([query])
     D, I = index.search(np.array(q_vec), k)
 
-    # filter low-quality results
     results = []
     for i, score in zip(I[0], D[0]):
-        if score < 1.5:   # threshold (important)
+        if score < 1.5:
             results.append(chunks[i])
 
-    return "\n".join(results) if results else ""
+    return "\n".join(results)
 
 # -----------------------
-# Display existing chat
+# Google Sheets Save
+# -----------------------
+def save_to_google_sheets(name, email, requirement):
+    creds_dict = json.loads(st.secrets["GOOGLE_CREDENTIALS"])
+
+    scopes = ["https://www.googleapis.com/auth/spreadsheets"]
+    creds = Credentials.from_service_account_info(creds_dict, scopes=scopes)
+
+    client_gs = gspread.authorize(creds)
+
+    sheet = client_gs.open("Leads").sheet1
+
+    sheet.append_row([
+        name,
+        email,
+        requirement,
+        datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    ])
+
+# -----------------------
+# Chat Memory
+# -----------------------
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+# -----------------------
+# Display Chat
 # -----------------------
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
@@ -77,60 +105,91 @@ user_input = st.chat_input("Ask about our services...")
 # -----------------------
 if user_input:
 
-    # Add user message
-    st.session_state.messages.append({
-        "role": "user",
-        "content": user_input
-    })
+    # Show user message
+    st.session_state.messages.append({"role": "user", "content": user_input})
 
-    # Show user message immediately
     with st.chat_message("user"):
         st.write(user_input)
 
-    # Retrieve context
     context = retrieve(user_input)
+
     if not context:
         context = "Rishikirti Technologies provides ERP customization, data analytics, and design services."
 
-    # Build prompt
-    prompt = f"""
-You are a helpful and professional assistant for Rishikirti Technologies.
-
-Use the provided context as primary reference, but you can also use general knowledge to improve clarity.
+    # SYSTEM PROMPT (Sales + Smart)
+    system_prompt = """
+You are a smart business consultant for Rishikirti Technologies.
 
 Your goals:
-- Answer clearly and naturally
-- Explain services in a business-friendly way
-- If user shows interest, ask follow-up questions
+- Understand the user's requirement
+- Suggest relevant services (ERP, analytics, design)
+- Ask follow-up questions
+- Guide user toward sharing their requirement
 
+Rules:
+- Keep answers under 4-5 lines
+- Be conversational and helpful
+"""
+
+    # Build messages
+    messages = [{"role": "system", "content": system_prompt}]
+
+    for msg in st.session_state.messages[-5:]:
+        messages.append(msg)
+
+    messages.append({
+        "role": "user",
+        "content": f"""
 Context:
 {context}
 
-User: {user_input}
-Assistant:
+User Query:
+{user_input}
 """
+    })
 
     try:
         with st.spinner("Thinking..."):
             response = client.chat.completions.create(
                 model="llama-3.3-70b-versatile",
-                messages=[{"role": "system", "content": "You are a business consultant for Rishikirti Technologies. Always give specific, practical answers about ERP, analytics, and design services."},
-                        ,{"role": "user", "content": prompt[:4000]}]
-                temperature=0.5
+                messages=messages,
+                temperature=0.4
             )
 
-        bot_reply = response.choices[0].message.content
+        bot_reply = response.choices[0].message.content.strip()
 
     except Exception as e:
         st.error(f"Groq Error: {str(e)}")
         st.stop()
 
-    # Add assistant message
+    # Save response
     st.session_state.messages.append({
         "role": "assistant",
         "content": bot_reply
     })
 
-    # Show assistant response
     with st.chat_message("assistant"):
-        st.write("Context used:", context)
+        st.write(bot_reply)
+
+    # Smart lead trigger
+    if any(word in user_input.lower() for word in ["price", "cost", "demo", "interested", "contact"]):
+        st.info("👉 Looks like you're interested. Please fill the form below and our team will reach out!")
+
+# -----------------------
+# Lead Capture Form
+# -----------------------
+st.divider()
+st.subheader("📩 Get in Touch")
+
+name = st.text_input("Your Name")
+email = st.text_input("Your Email")
+requirement = st.text_area("Your Requirement")
+
+consent = st.checkbox("I agree to share my information for contact purposes")
+
+if st.button("Submit"):
+    if name and email and requirement and consent:
+        save_to_google_sheets(name, email, requirement)
+        st.success("✅ Thank you! Our team will contact you soon.")
+    else:
+        st.warning("Please fill all fields and accept consent")
