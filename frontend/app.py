@@ -29,7 +29,7 @@ def load_vector_store():
     with open(file_path, "r", encoding="utf-8") as f:
         text = f.read()
 
-    chunks = text.split("\n\n")
+    chunks = [chunk.strip() for chunk in text.split("\n\n") if chunk.strip()]
     embeddings = embed_model.encode(chunks)
 
     index = faiss.IndexFlatL2(len(embeddings[0]))
