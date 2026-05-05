@@ -114,8 +114,9 @@ Assistant:
         with st.spinner("Thinking..."):
             response = client.chat.completions.create(
                 model="llama-3.3-70b-versatile",
-                messages=[{"role": "user", "content": prompt[:4000]}],
-                temperature=0.7
+                messages=[{"role": "system", "content": "You are a business consultant for Rishikirti Technologies. Always give specific, practical answers about ERP, analytics, and design services."},
+                        ,{"role": "user", "content": prompt[:4000]}]
+                temperature=0.5
             )
 
         bot_reply = response.choices[0].message.content
