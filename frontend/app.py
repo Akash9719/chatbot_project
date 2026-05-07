@@ -134,6 +134,7 @@ Company Services:
 - Oracle ERP solutions
 - JD Edwards ERP solutions
 - ESG analytics and sustainability research & dashboards
+- Data analytics and business intelligence
 
 
 Your goals:
