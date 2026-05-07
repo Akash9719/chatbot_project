@@ -135,6 +135,7 @@ Company Services:
 - JD Edwards ERP solutions
 - ESG analytics and sustainability research & dashboards
 - Data analytics and business intelligence
+- Process improvement and workflow optimization
 
 
 Your goals:
