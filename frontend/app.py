@@ -131,7 +131,7 @@ if user_input:
 You are a smart business consultant for Rishikirti Technologies.
 
 Company Services:
-
+- Oracle ERP solutions
 
 Your goals:
 - Understand the user's requirement
