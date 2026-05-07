@@ -136,6 +136,8 @@ Company Services:
 - ESG analytics and sustainability research & dashboards
 - Data analytics and business intelligence
 - Process improvement and workflow optimization
+- Python and VBA automation solutions
+- Machine learning and predictive analytics
 
 
 Your goals:
