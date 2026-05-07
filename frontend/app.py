@@ -138,7 +138,7 @@ Company Services:
 - Process improvement and workflow optimization
 - Python and VBA automation solutions
 - Machine learning and predictive analytics
-
+- AI tool development
 
 Your goals:
 - Understand the user's requirement
