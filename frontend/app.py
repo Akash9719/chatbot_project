@@ -1,7 +1,6 @@
 import os
 import streamlit as st
 import numpy as np
-from sentence_transformers import SentenceTransformer
 from groq import Groq
 
 # Google Sheets
