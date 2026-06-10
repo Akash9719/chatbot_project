@@ -37,45 +37,6 @@ def retrieve(query):
     return knowledge
 
 # -----------------------
-# Load Knowledge
-# -----------------------
-@st.cache_resource
-def load_vector_store():
-    current_dir = os.path.dirname(__file__)
-    file_path = os.path.join(current_dir, "knowledge.txt")
-
-    if not os.path.exists(file_path):
-        st.error(f"❌ knowledge.txt not found at: {file_path}")
-        st.stop()
-
-    with open(file_path, "r", encoding="utf-8") as f:
-        text = f.read()
-
-    chunks = [chunk.strip() for chunk in text.split("\n\n") if chunk.strip()]
-    embeddings = embed_model.encode(chunks)
-
-    index = faiss.IndexFlatL2(len(embeddings[0]))
-    index.add(np.array(embeddings))
-
-    return index, chunks
-
-index, chunks = load_vector_store()
-
-# -----------------------
-# Retrieval
-# -----------------------
-def retrieve(query, k=3):
-    q_vec = embed_model.encode([query])
-    D, I = index.search(np.array(q_vec), k)
-
-    results = []
-    for i, score in zip(I[0], D[0]):
-        if score < 1.5:
-            results.append(chunks[i])
-
-    return "\n".join(results)
-
-# -----------------------
 # Google Sheets Save
 # -----------------------
 def save_to_google_sheets(name, email, requirement):
