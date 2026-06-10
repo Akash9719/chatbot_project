@@ -19,7 +19,7 @@ st.title("💬 Rishikirti AI Assistant")
 # Setup
 # -----------------------
 client = Groq(api_key=st.secrets["GROQ_API_KEY"])
-embed_model = SentenceTransformer("all-MiniLM-L6-v2")
+@st.cache_resource
 
 # -----------------------
 # Load Knowledge
