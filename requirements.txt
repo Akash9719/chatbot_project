@@ -1,6 +1,5 @@
 streamlit
 groq
-sentence-transformers
 numpy
 gspread
 google-auth
