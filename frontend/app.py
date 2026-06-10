@@ -22,6 +22,7 @@ client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 @st.cache_resource
 def load_knowledge():
     current_dir = os.path.dirname(__file__)
+    file_path = os.path.join(current_dir, "knowledge.txt")
 
 # -----------------------
 # Load Knowledge
