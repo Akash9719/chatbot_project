@@ -28,6 +28,7 @@ def load_knowledge():
 
 knowledge = load_knowledge()
 def retrieve(query):
+    return knowledge
 
 # -----------------------
 # Load Knowledge
