@@ -23,6 +23,11 @@ client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 def load_knowledge():
     current_dir = os.path.dirname(__file__)
     file_path = os.path.join(current_dir, "knowledge.txt")
+    with open(file_path, "r", encoding="utf-8") as f:
+        return f.read()
+
+knowledge = load_knowledge()
+def retrieve(query):
 
 # -----------------------
 # Load Knowledge
