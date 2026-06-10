@@ -20,6 +20,7 @@ st.title("💬 Rishikirti AI Assistant")
 # -----------------------
 client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 @st.cache_resource
+def load_knowledge():
 
 # -----------------------
 # Load Knowledge
