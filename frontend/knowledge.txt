@@ -1,20 +1,94 @@
-### About Rishikirti Technologies
-Rishikirti Technologies provides ERP customization, data analytics, and professional design services for businesses.
+RishiKirti Technologies Private Limited is a technology consulting and digital transformation company specializing in ERP, Data Analytics, Automation, AI solutions, Design Services, and Enterprise Applications.
 
-### ERP Customization
-We specialize in customizing ERP systems based on business workflows. We help companies automate operations, reduce manual effort, and improve efficiency.
+We help organizations improve operational efficiency, automate business processes, modernize technology platforms, and make data-driven decisions.
 
-### Data Analytics
-We provide dashboards, reporting, KPI tracking, and business insights using tools like Power BI and advanced analytics.
+Core Services:
 
-### Design Services
-We offer UI/UX design, product design, and branding services for web and mobile platforms.
+ERP Solutions:
+- Oracle JD Edwards
+- Oracle Fusion Cloud
+- Oracle CX Cloud
+- ERP Consulting
+- ERP Implementation
+- ERP Customization
+- ERP Support and Managed Services
 
-### Industries
-We work with manufacturing, retail, and service-based businesses.
+Data Analytics:
+- Business Analytics
+- Business Intelligence (BI) Dashboards
+- KPI Reporting
+- Data Visualization
+- Strategy Advisory
+- Predictive Analytics
+- Prescriptive Analytics
+- Advanced Analytics & Modelling
+- Data Integration
+- ETL Solutions
 
-### Value Proposition
-We help businesses improve decision-making, optimize processes, and scale efficiently using technology.
+Artificial Intelligence & Automation:
+- AI-powered business solutions
+- Machine Learning solutions
+- Predictive modelling
+- Process automation
+- Workflow automation
+- Python automation
+- VBA automation
+- Business process optimization
+- Intelligent reporting solutions
 
-### Lead Strategy
-Always ask the user about their business needs, challenges, and requirements. Encourage them to share details for better solutions.
+Digital Transformation:
+- Technology modernization
+- Process improvement
+- Operational efficiency improvement
+- Enterprise automation
+- Business transformation initiatives
+
+Software Development:
+- Java Full Stack Development
+- Enterprise Application Development
+- Web Application Development
+- Custom Software Solutions
+
+Database & Managed Services:
+- Database Management Services
+- Database Administration
+- Database Optimization
+- Database Migration
+- Database Monitoring
+- Managed IT Services
+
+Design Services:
+- Digital & Multimedia Design
+- Corporate Design
+- Visual Presentation Design
+- Data Visualization Design
+- Exhibition & Event Design
+- UI/UX Design
+
+Products & Solutions:
+- RKT-ESS Mobile App
+- Vendor Portal
+- JDE Dashboard
+- Document Management System (DMS)
+- WhatsApp Integration
+- RKT-Assist Ticketing Tool
+- RKT-Timesheet
+- Inventory Cycle Count Solution
+
+Industries Served:
+- Manufacturing
+- Distribution
+- Finance
+- Enterprise Businesses
+- Mid-Sized Organizations
+
+Approach:
+RishiKirti Technologies focuses on helping organizations improve productivity, gain better visibility into business performance, automate manual processes, and leverage technology for sustainable growth.
+
+When discussing customer requirements:
+- Understand the business problem first.
+- Ask discovery questions before recommending solutions.
+- Suggest relevant services based on the user's challenges.
+- For analytics requirements, explore reporting, dashboards, predictive analytics, automation, AI, and process improvement opportunities.
+- For ERP requirements, focus on Oracle ERP capabilities and enterprise transformation.
+- For AI requirements, discuss machine learning, automation, AI assistants, prompt engineering, and intelligent business solutions.
