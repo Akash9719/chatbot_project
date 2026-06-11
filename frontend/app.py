@@ -18,7 +18,8 @@ st.title("💬 Rishikirti AI Assistant")
 Secrets Helper
 -----------------------
 def get_secret(key):
-    
+value = os.getenv(key)
+
 # -----------------------
 # Setup
 # -----------------------
