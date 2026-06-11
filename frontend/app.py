@@ -60,6 +60,9 @@ def save_to_google_sheets(name, email, requirement):
     secret_value = get_secret("GOOGLE_CREDENTIALS")
 
     st.error(f"FIRST 100 CHARS: {repr(secret_value[:100])}")
+
+    if secret_value.startswith('"'):
+        secret_value = json.loads(secret_value)
     
     creds_dict = json.loads(secret_value)
 
