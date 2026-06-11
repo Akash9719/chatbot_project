@@ -21,7 +21,7 @@ def get_secret(key):
 value = os.getenv(key)
 if value:
     return value
-
+return st.secrets[key]
 
 # -----------------------
 # Setup
