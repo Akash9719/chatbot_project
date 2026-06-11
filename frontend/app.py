@@ -14,9 +14,9 @@ from datetime import datetime
 st.set_page_config(page_title="Rishikirti AI Assistant")
 st.title("💬 Rishikirti AI Assistant")
 
------------------------
+#-----------------------
 Secrets Helper
------------------------
+#-----------------------
 def get_secret(key):
 value = os.getenv(key)
 if value:
