@@ -15,32 +15,23 @@ st.set_page_config(page_title="Rishikirti AI Assistant")
 st.title("💬 Rishikirti AI Assistant")
 
 # -----------------------
-
 # Secrets Helper
-
 # -----------------------
-
 def get_secret(key):
 value = os.getenv(key)
 
-```
 if value:
     return value
 
 return st.secrets[key]
-```
 
 # -----------------------
-
 # Groq Setup
-
 # -----------------------
-
 groq_api_key = get_secret("GROQ_API_KEY")
 
 client = Groq(
-api_key=groq_api_key
-)
+api_key=groq_api_key)
 
 @st.cache_resource
 def load_knowledge():
