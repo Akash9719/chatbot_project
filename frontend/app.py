@@ -20,7 +20,7 @@ st.title("💬 Rishikirti AI Assistant")
 def get_secret(key):
     value = os.getenv(key)
 
-if value:
+if value: 
     return value
 
 return st.secrets[key]
