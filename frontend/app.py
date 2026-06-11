@@ -58,6 +58,10 @@ def retrieve(query):
 def save_to_google_sheets(name, email, requirement):
     creds_dict = json.loads(get_secret("GOOGLE_CREDENTIALS"))
 
+    st.write("DEBUG:")
+    st.write(secret_value)
+    creds_dict = json.loads(secret_value)
+
     scopes = [
         "https://www.googleapis.com/auth/spreadsheets",
         "https://www.googleapis.com/auth/drive"
