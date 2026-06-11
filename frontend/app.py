@@ -37,15 +37,15 @@ client = Groq(
 
 @st.cache_resource
 def load_knowledge():
-current_dir = os.path.dirname(**file**)
-file_path = os.path.join(current_dir, "knowledge.txt")
+    current_dir = os.path.dirname(__file__)
+    file_path = os.path.join(current_dir, "knowledge.txt")
 
-if not os.path.exists(file_path):
-    st.error(f"❌ knowledge.txt not found at: {file_path}")
-    st.stop()
+    if not os.path.exists(file_path):
+        st.error(f"❌ knowledge.txt not found at: {file_path}")
+        st.stop()
 
-with open(file_path, "r", encoding="utf-8") as f:
-    return f.read()
+    with open(file_path, "r", encoding="utf-8") as f:
+        return f.read()
 
 knowledge = load_knowledge()
 
