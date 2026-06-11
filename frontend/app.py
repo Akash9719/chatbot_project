@@ -20,6 +20,7 @@ st.title("💬 Rishikirti AI Assistant")
 client = os.getenv("GROQ_API_KEY")
 
 if not groq_api_key:
+    groq_api_key = st.secrets["GROQ_API_KEY"]
 
 @st.cache_resource
 def load_knowledge():
