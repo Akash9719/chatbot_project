@@ -56,9 +56,11 @@ def retrieve(query):
 # Google Sheets Save
 # -----------------------
 def save_to_google_sheets(name, email, requirement):
-    creds_dict = json.loads(get_secret("GOOGLE_CREDENTIALS"))
 
-    st.error(f"DEBUG: [{secret_value}]")
+    secret_value = get_secret("GOOGLE_CREDENTIALS")
+
+    st.error(f"DEBUG LENGTH: {len(str(secret_value))}")
+    
     creds_dict = json.loads(secret_value)
 
     scopes = [
