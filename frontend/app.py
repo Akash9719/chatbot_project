@@ -17,7 +17,8 @@ st.title("💬 Rishikirti AI Assistant")
 -----------------------
 Secrets Helper
 -----------------------
-
+def get_secret(key):
+    
 # -----------------------
 # Setup
 # -----------------------
