@@ -19,6 +19,9 @@ Secrets Helper
 -----------------------
 def get_secret(key):
 value = os.getenv(key)
+if value:
+    return value
+
 
 # -----------------------
 # Setup
