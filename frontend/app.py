@@ -26,7 +26,11 @@ return st.secrets[key]
 #-----------------------
 #Groq Setup
 #-----------------------
+groq_api_key = get_secret("GROQ_API_KEY")
 
+client = Groq(
+api_key=groq_api_key
+)
 
 # -----------------------
 # Setup
