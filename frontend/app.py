@@ -15,13 +15,18 @@ st.set_page_config(page_title="Rishikirti AI Assistant")
 st.title("💬 Rishikirti AI Assistant")
 
 #-----------------------
-Secrets Helper
+#Secrets Helper
 #-----------------------
 def get_secret(key):
 value = os.getenv(key)
 if value:
     return value
 return st.secrets[key]
+
+#-----------------------
+#Groq Setup
+#-----------------------
+
 
 # -----------------------
 # Setup
