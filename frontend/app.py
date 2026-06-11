@@ -18,23 +18,21 @@ st.title("💬 Rishikirti AI Assistant")
 # -----------------------
 # Secrets Helper
 # -----------------------
-
 def get_secret(key):
-value = os.getenv(key)
+    value = os.getenv(key)
 
-if value:
-    return value
+    if value:
+        return value
 
-return st.secrets[key]
+    return st.secrets[key]
 
 # -----------------------
 # Groq Setup
 # -----------------------
-
 groq_api_key = get_secret("GROQ_API_KEY")
 
 client = Groq(
-api_key=groq_api_key
+    api_key=groq_api_key
 )
 
 @st.cache_resource
