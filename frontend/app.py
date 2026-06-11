@@ -19,6 +19,8 @@ st.title("💬 Rishikirti AI Assistant")
 # -----------------------
 client = os.getenv("GROQ_API_KEY")
 
+if not groq_api_key:
+
 @st.cache_resource
 def load_knowledge():
     current_dir = os.path.dirname(__file__)
