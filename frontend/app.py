@@ -93,9 +93,16 @@ if "show_form" not in st.session_state:
 # -----------------------
 # Display Chat
 # -----------------------
-for msg in st.session_state.messages:
-    with st.chat_message(msg["role"]):
-        st.write(msg["content"])
+if "messages" not in st.session_state:
+    st.session_state.messages = [
+        {
+            "role": "assistant",
+            "content": """Hi, Welcome to RishiKirti Technologies.
+
+I am Kirti, your Virtual Assistant.
+How can I help you today?"""
+        }
+    ]
 
 # -----------------------
 # User Input
