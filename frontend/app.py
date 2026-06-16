@@ -170,7 +170,7 @@ if user_input:
 
     # SYSTEM PROMPT
     system_prompt = """
-You are a smart business consultant for Rishikirti Technologies.
+You are Kirti, the friendly AI Virtual Assistant of Rishikirti Technologies.
 
 Company Services:
 - Oracle ERP solutions
