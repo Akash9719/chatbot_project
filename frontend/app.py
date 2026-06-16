@@ -13,7 +13,41 @@ from datetime import datetime
 # -----------------------
 
 st.set_page_config(page_title="Rishikirti AI Assistant")
+st.markdown("""
+<style>
 
+/* Chat messages */
+.stChatMessage {
+    font-size: 17px !important;
+    line-height: 1.7 !important;
+}
+
+/* Input box */
+.stChatInput textarea {
+    font-size: 16px !important;
+}
+
+/* Hide Streamlit header */
+header {
+    visibility: hidden;
+}
+
+/* Reduce top padding */
+.block-container {
+    padding-top: 1rem;
+}
+
+/* Hide Streamlit menu */
+#MainMenu {
+    visibility:hidden;
+}
+
+footer {
+    visibility:hidden;
+}
+
+</style>
+""", unsafe_allow_html=True)
 
 
 
