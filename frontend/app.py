@@ -177,7 +177,7 @@ if user_input:
         context = "Rishikirti Technologies provides ERP customization, data analytics, and design services."
 
     # 🔥 Intent Detection
-    intent_keywords = ["price", "cost", "demo", "interested", "contact", "connect", "talk"]
+    intent_keywords = ["price", "cost", "demo", "interested", "contact", "connect", "talk","hire","talk","human","consultant","call", "meeting", "proposal"]
 
     if any(word in user_input.lower() for word in intent_keywords):
         st.session_state.show_form = True
