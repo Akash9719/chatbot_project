@@ -123,7 +123,16 @@ def save_to_google_sheets(name, email, requirement):
 # Session State
 # -----------------------
 if "messages" not in st.session_state:
-    st.session_state.messages = []
+    st.session_state.messages = [
+        {
+            "role": "assistant",
+            "content": """Hi, Welcome to RishiKirti Technologies.
+
+I am Kirti, your Virtual Assistant.
+
+How can I help you today?"""
+        }
+    ]
 
 if "show_form" not in st.session_state:
     st.session_state.show_form = False
