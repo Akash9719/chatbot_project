@@ -257,7 +257,10 @@ User Query:
         "content": bot_reply
     })
 
-    with st.chat_message("assistant"):
+    with st.chat_message(
+        "assistant",
+        avatar="https://rishikirti.com/images/kirti-ai.png"
+    ):
         st.write(bot_reply)
 
     # Soft CTA
