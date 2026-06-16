@@ -153,11 +153,6 @@ for msg in st.session_state.messages:
     ):
         st.write(msg["content"])
 
-I am Kirti, your Virtual Assistant.
-How can I help you today?"""
-        }
-    ]
-
 # -----------------------
 # User Input
 # -----------------------
