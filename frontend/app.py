@@ -170,7 +170,10 @@ if user_input:
 
     st.session_state.messages.append({"role": "user", "content": user_input})
 
-    with st.chat_message("user"):
+    with st.chat_message(
+        "user",
+        avatar="👤"
+    ):
         st.write(user_input)
 
     context = retrieve(user_input)
