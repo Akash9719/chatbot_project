@@ -51,7 +51,7 @@ footer {
 
 
 
-st.title("💬 Rishikirti AI Assistant")
+#st.title("💬 Rishikirti AI Assistant")
 
 # -----------------------
 # Secrets Helper
