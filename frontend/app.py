@@ -244,7 +244,7 @@ Always keep responses aligned with our company offerings.
 
     messages = [{"role": "system", "content": system_prompt}]
 
-    for msg in st.session_state.messages[-5:]:
+    for msg in st.session_state.messages[-8:]:
         messages.append(msg)
 
     messages.append({
