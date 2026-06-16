@@ -13,10 +13,7 @@ from datetime import datetime
 # -----------------------
 
 st.set_page_config(page_title="Rishikirti AI Assistant")
-st.markdown("""
-<style>
 
-/* Chat messages */
 
 
 
