@@ -140,11 +140,18 @@ if "show_form" not in st.session_state:
 # -----------------------
 # Display Chat
 # -----------------------
-if "messages" not in st.session_state:
-    st.session_state.messages = [
-        {
-            "role": "assistant",
-            "content": """Hi, Welcome to RishiKirti Technologies.
+for msg in st.session_state.messages:
+    avatar = (
+        "https://rishikirti.com/images/kirti-ai.png"
+        if msg["role"] == "assistant"
+        else "👤"
+    )
+
+    with st.chat_message(
+        msg["role"],
+        avatar=avatar
+    ):
+        st.write(msg["content"])
 
 I am Kirti, your Virtual Assistant.
 How can I help you today?"""
