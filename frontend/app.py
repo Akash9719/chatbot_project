@@ -17,7 +17,8 @@ st.markdown("""
 <style>
 
 /* Chat messages */
-.stChatMessage {
+
+
 
 st.title("💬 Rishikirti AI Assistant")
 
