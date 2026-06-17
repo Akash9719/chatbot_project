@@ -169,7 +169,16 @@ for msg in st.session_state.messages:
         msg["role"],
         avatar=avatar
     ):
-        st.write(msg["content"])
+        if msg["role"] == "assistant":
+            st.markdown(
+                f'<div class="bot-box">{msg["content"]}</div>',
+                unsafe_allow_html=True
+            )
+        else:
+            st.markdown(
+                f'<div class="user-box">{msg["content"]}</div>',
+                unsafe_allow_html=True
+            )
 
 # -----------------------
 # User Input
