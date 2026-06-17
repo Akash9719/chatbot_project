@@ -11,47 +11,49 @@ from datetime import datetime
 # -----------------------
 # Page Setup
 # -----------------------
+# -----------------------
+# Display Chat
+# -----------------------
 
-st.set_page_config(page_title="Rishikirti AI Assistant")
 st.markdown("""
 <style>
 
-/* Chat messages */
-.stChatMessage {
-    font-size: 16px !important;
-    line-height: 1.6 !important;
+/* Bot Bubble */
+.bot-box {
+    background: #f5f7fb;
+    padding: 14px 18px;
+    border-radius: 18px 18px 18px 6px;
+    border: 1px solid #e2e8f0;
+    max-width: 75%;
+    color: #222;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-/* Input box */
-.stChatInput textarea {
-    font-size: 16px !important;
+/* User Bubble */
+.user-box {
+    background: #4f86f7;
+    color: white;
+    padding: 14px 18px;
+    border-radius: 18px 18px 6px 18px;
+    max-width: 75%;
+    margin-left: auto;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 10px;
 }
 
-/* Hide Streamlit header */
-header {
-    visibility: hidden;
-}
-
-/* Reduce top padding */
-.block-container {
-    padding-top: 1rem;
-}
-
-/* Hide Streamlit menu */
-#MainMenu {
-    visibility:hidden;
-}
-
-footer {
-    visibility:hidden;
+/* Remove Streamlit default styling */
+[data-testid="stChatMessage"] {
+    background: transparent !important;
+    border: none !important;
 }
 
 </style>
 """, unsafe_allow_html=True)
 
-
-
-#st.title("💬 Rishikirti AI Assistant")
 
 # -----------------------
 # Secrets Helper
