@@ -140,6 +140,24 @@ if "show_form" not in st.session_state:
 # -----------------------
 # Display Chat
 # -----------------------
+st.markdown("""
+<style>
+.bot-box {
+    background-color: #f3f4f6;
+    padding: 12px 16px;
+    border-radius: 12px:
+    border: 1px solid #e5e7eb;
+}
+
+.user-box {
+    background-color: #e8f0fe;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid #d0d7de;
+}
+</style>
+""", unsafe_allow_html=True)
+
 for msg in st.session_state.messages:
     avatar = (
         "https://rishikirti.com/images/kirti-ai.png"
