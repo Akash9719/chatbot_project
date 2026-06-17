@@ -18,6 +18,37 @@ st.set_page_config(
 )
 
 # -----------------------
+# Kirti Header
+# -----------------------
+
+st.markdown("""
+<div style="
+    background: #4f86f7;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    margin-bottom: 15px;
+">
+    <img src="https://rishikirti.com/images/kirti-ai.png"
+        width="55"
+        style="border-radius:50%;">
+
+    <div>
+        <div style="font-size:24px;font-weight:bold;">
+            KIRTI
+        </div>
+
+        <div style="font-size:15px;">
+            Your Virtual Assistant
+        </div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+# -----------------------
 # Display Chat
 # -----------------------
 
