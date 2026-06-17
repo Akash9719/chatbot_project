@@ -18,13 +18,13 @@ st.markdown("""
 
 /* Chat messages */
 .stChatMessage {
-    font-size: 12px !important;
-    line-height: 1.2 !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
 }
 
 /* Input box */
 .stChatInput textarea {
-    font-size: 12px !important;
+    font-size: 16px !important;
 }
 
 /* Hide Streamlit header */
