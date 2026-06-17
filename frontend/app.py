@@ -177,6 +177,22 @@ if "show_form" not in st.session_state:
     st.session_state.show_form = False
 
 # -----------------------
+# Display Chat History
+# -----------------------
+
+for msg in st.session_state.messages:
+    avatar = (
+        "https://rishikirti.com/images/kirti-ai.png"
+        if msg["role"] == "assistant"
+        else "👤"
+    )
+    with st.chat_message(
+        msg["role"],
+        avatar=avatar
+    ):
+        st.write(msg["content"])
+
+# -----------------------
 # User Input
 # -----------------------
 user_input = st.chat_input("Ask about our services...")
