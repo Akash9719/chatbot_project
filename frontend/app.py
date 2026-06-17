@@ -140,49 +140,6 @@ if "show_form" not in st.session_state:
     st.session_state.show_form = False
 
 # -----------------------
-# Display Chat
-# -----------------------
-st.markdown("""
-<style>
-.bot-box {
-    background-color: #f3f4f6;
-    padding: 12px 16px;
-    border-radius: 12px:
-    border: 1px solid #e5e7eb;
-}
-
-.user-box {
-    background-color: #e8f0fe;
-    padding: 12px 16px;
-    border-radius: 12px;
-    border: 1px solid #d0d7de;
-}
-</style>
-""", unsafe_allow_html=True)
-
-for msg in st.session_state.messages:
-    avatar = (
-        "https://rishikirti.com/images/kirti-ai.png"
-        if msg["role"] == "assistant"
-        else "👤"
-    )
-
-    with st.chat_message(
-        msg["role"],
-        avatar=avatar
-    ):
-        if msg["role"] == "assistant":
-            st.markdown(
-                f'<div class="bot-box">{msg["content"]}</div>',
-                unsafe_allow_html=True
-            )
-        else:
-            st.markdown(
-                f'<div class="user-box">{msg["content"]}</div>',
-                unsafe_allow_html=True
-            )
-
-# -----------------------
 # User Input
 # -----------------------
 user_input = st.chat_input("Ask about our services...")
