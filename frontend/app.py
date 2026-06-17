@@ -11,6 +11,12 @@ from datetime import datetime
 # -----------------------
 # Page Setup
 # -----------------------
+st.set_page_config(
+    page_title="Rishikirti AI Assistant",
+    page_icon="💬",
+    layout="centered"
+)
+
 # -----------------------
 # Display Chat
 # -----------------------
