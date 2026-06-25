@@ -1,0 +1,389 @@
+/* ===========================
+   IMPORT FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html, body, [class*="css"]{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* ===========================
+   APP BACKGROUND
+=========================== */
+
+.stApp{
+    background:#f3f6fb;
+}
+
+
+/* ===========================
+   MAIN CHAT CONTAINER
+=========================== */
+
+.block-container{
+    max-width:560px;
+    margin:auto;
+    padding-top:0rem;
+    padding-bottom:1rem;
+}
+
+
+/* ===========================
+   HEADER
+=========================== */
+
+.chat-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:linear-gradient(90deg,#0057D9,#2878FF);
+
+    padding:18px;
+
+    border-radius:18px 18px 0px 0px;
+
+    color:white;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+.chat-header img{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:white;
+
+    padding:3px;
+
+}
+
+.chat-title{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    line-height:1;
+
+}
+
+.chat-subtitle{
+
+    font-size:14px;
+
+    opacity:.95;
+
+    margin-top:5px;
+
+}
+
+
+/* ===========================
+   CHAT AREA
+=========================== */
+
+.chat-body{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:0px 0px 18px 18px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+
+/* ===========================
+   STREAMLIT CHAT MESSAGE
+=========================== */
+
+[data-testid="stChatMessage"]{
+
+    background:none !important;
+
+    border:none !important;
+
+    box-shadow:none !important;
+
+    padding:8px 0px;
+
+}
+
+
+/* ===========================
+   AVATARS
+=========================== */
+
+[data-testid="stChatMessageAvatarAssistant"] img{
+
+    width:44px !important;
+
+    height:44px !important;
+
+    border-radius:50%;
+
+}
+
+[data-testid="stChatMessageAvatarUser"]{
+
+    font-size:26px;
+
+}
+
+
+/* ===========================
+   BOT MESSAGE
+=========================== */
+
+[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]){
+
+    display:flex;
+
+}
+
+[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]) [data-testid="stMarkdownContainer"]{
+
+    background:#eef3fb;
+
+    border-radius:18px 18px 18px 6px;
+
+    padding:14px 18px;
+
+    box-shadow:0 3px 8px rgba(0,0,0,.08);
+
+    max-width:80%;
+
+    color:#222;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+
+/* ===========================
+   USER MESSAGE
+=========================== */
+
+[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]){
+
+    display:flex;
+
+    justify-content:flex-end;
+
+}
+
+[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) [data-testid="stMarkdownContainer"]{
+
+    background:#0B66FF;
+
+    color:white;
+
+    border-radius:18px 18px 6px 18px;
+
+    padding:14px 18px;
+
+    box-shadow:0 3px 8px rgba(0,0,0,.12);
+
+    max-width:80%;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+
+/* ===========================
+   INPUT BOX
+=========================== */
+
+[data-testid="stChatInput"]{
+
+    position:sticky;
+
+    bottom:0;
+
+    background:white;
+
+    padding-top:15px;
+
+    padding-bottom:10px;
+
+}
+
+[data-testid="stChatInput"] textarea{
+
+    border-radius:25px !important;
+
+    border:1px solid #dbe4f0 !important;
+
+    min-height:48px !important;
+
+    padding:10px 16px !important;
+
+    font-size:15px;
+
+}
+
+[data-testid="stChatInput"] textarea:focus{
+
+    border:1px solid #0B66FF !important;
+
+    box-shadow:0 0 0 3px rgba(11,102,255,.15);
+
+}
+
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.stButton button{
+
+    width:100%;
+
+    border-radius:25px;
+
+    background:#0B66FF;
+
+    color:white;
+
+    border:none;
+
+    padding:10px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.stButton button:hover{
+
+    background:#0050cc;
+
+}
+
+
+/* ===========================
+   FORM
+=========================== */
+
+.stTextInput input{
+
+    border-radius:12px;
+
+}
+
+textarea{
+
+    border-radius:12px !important;
+
+}
+
+
+/* ===========================
+   DIVIDER
+=========================== */
+
+hr{
+
+    margin-top:25px;
+
+    margin-bottom:25px;
+
+}
+
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#c6d4ea;
+
+    border-radius:20px;
+
+}
+
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+[data-testid="stChatMessage"]{
+
+    animation:fadeIn .25s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(8px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.block-container{
+
+    max-width:100%;
+
+    padding:0px;
+
+}
+
+.chat-header{
+
+    border-radius:0px;
+
+}
+
+.chat-body{
+
+    border-radius:0px;
+
+}
+
+}
