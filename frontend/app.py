@@ -116,8 +116,6 @@ def save_to_google_sheets(name, email, requirement):
         datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     ])
 
-st.markdown('<div class="chat-body">', unsafe_allow_html=True)
-
 # -----------------------
 # Session State
 # -----------------------
