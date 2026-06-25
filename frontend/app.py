@@ -21,6 +21,7 @@ st.set_page_config(
 # Display Chat
 # -----------------------
 
+# Load External CSS
 st.markdown("""
 <style>
 
