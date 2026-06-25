@@ -26,18 +26,6 @@ st.markdown("""
 
 
 
-/* User Bubble */
-.user-box {
-    background: #4f86f7;
-    color: white;
-    padding: 14px 18px;
-    border-radius: 18px 18px 6px 18px;
-    max-width: 75%;
-    margin-left: auto;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
 
 /* Remove Streamlit default styling */
 [data-testid="stChatMessage"] {
