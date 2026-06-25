@@ -300,7 +300,7 @@ User Query:
         "assistant",
         avatar="https://rishikirti.com/images/kirti-ai.png"
     ):
-        st.write(bot_reply)
+        st.markdown(bot_reply)
 
     # Soft CTA
     if st.session_state.show_form:
