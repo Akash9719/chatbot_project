@@ -25,6 +25,30 @@ st.set_page_config(
 with open("style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
+# ==========================
+# Chat Header
+# ==========================
+
+st.markdown("""
+<div class="chat-header">
+    <img src="https://rishikirti.com/images/kirti-ai.png">
+
+    <div>
+        <div class="chat-title">
+            KIRTI
+        </div>
+
+        <div class="chat-subtitle">
+            Your Virtual Assistant
+        </div>
+
+    </div>
+
+</div>
+""", unsafe_allow_html=True)
+
+
+
 # -----------------------
 # Secrets Helper
 # -----------------------
