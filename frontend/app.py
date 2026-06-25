@@ -162,7 +162,7 @@ for msg in st.session_state.messages:
         msg["role"],
         avatar=avatar
     ):
-        st.write(msg["content"])
+        st.markdown(msg["content"])
 
 # -----------------------
 # User Input
