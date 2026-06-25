@@ -33,61 +33,43 @@ html, body, [class*="css"]{
 /* ===========================
    HEADER
 =========================== */
+/* HEADER */
 
-.chat-header{
+[data-testid="stHorizontalBlock"]{
 
-    display:flex;
+background:#0B66FF;
 
-    align-items:center;
+padding:18px;
 
-    gap:15px;
+border-radius:18px 18px 0 0;
 
-    background:linear-gradient(90deg,#0057D9,#2878FF);
+margin-bottom:0;
 
-    padding:18px;
-
-    border-radius:18px 18px 0px 0px;
-
-    color:white;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
+box-shadow:0 8px 20px rgba(0,0,0,.12);
 
 }
 
-.chat-header img{
+.header-title{
 
-    width:55px;
+font-size:24px;
 
-    height:55px;
+font-weight:700;
 
-    border-radius:50%;
+color:white;
 
-    background:white;
-
-    padding:3px;
+margin-top:2px;
 
 }
 
-.chat-title{
+.header-subtitle{
 
-    font-size:22px;
+font-size:14px;
 
-    font-weight:700;
+color:#dbeafe;
 
-    line-height:1;
-
-}
-
-.chat-subtitle{
-
-    font-size:14px;
-
-    opacity:.95;
-
-    margin-top:5px;
+margin-top:-3px;
 
 }
-
 
 /* ===========================
    CHAT AREA
