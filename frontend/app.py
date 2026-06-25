@@ -25,14 +25,6 @@ st.markdown("""
 <style>
 
 
-
-
-/* Remove Streamlit default styling */
-[data-testid="stChatMessage"] {
-    background: transparent !important;
-    border: none !important;
-}
-
 </style>
 """, unsafe_allow_html=True)
 
