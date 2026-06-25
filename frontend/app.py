@@ -22,7 +22,6 @@ st.set_page_config(
 # -----------------------
 
 # Load External CSS
-st.markdown("""
 <style>
 
 
