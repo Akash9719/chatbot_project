@@ -11,8 +11,9 @@ from datetime import datetime
 # -----------------------
 # Page Setup
 # -----------------------
+
 st.set_page_config(
-    page_title="Rishikirti AI Assistant",
+    page_title="RishiKirti AI Assistant",
     page_icon="💬",
     layout="centered"
 )
@@ -21,33 +22,45 @@ st.set_page_config(
 # Load CSS
 # -----------------------
 
-# Load External CSS
 current_dir = os.path.dirname(__file__)
 css_file = os.path.join(current_dir, "style.css")
 
-with open(css_file, "r", encoding="utf-8") as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-# ==========================
-# Chat Header
-# ==========================
-
-col1, col2 = st.columns([1, 6])
-
-with col1:
-    st.image(
-        "https://rishikirti.com/images/kirti-ai.png",
-        width=45
+with open(css_file, encoding="utf-8") as f:
+    st.markdown(
+        f"<style>{f.read()}</style>",
+        unsafe_allow_html=True
     )
 
-with col2:
-    st.markdown("""
-    <h3 style="margin-bottom:0;">KIRTI</h3>
-    <p style="margin-top:-10px;color:#dbeafe;">
-        Your Virtual Assistant
+# -----------------------
+# Header
+# -----------------------
 
-    </p>
-    """, unsafe_allow_html=True)
+header = st.container()
+
+with header:
+
+    col1, col2 = st.columns([1,6])
+
+    with col1:
+        st.image(
+            "https://rishikirti.com/images/kirti-ai.png",
+            width=52
+        )
+
+    with col2:
+
+        st.markdown(
+            """
+            <div class="header-title">
+                KIRTI
+            </div>
+
+            <div class="header-subtitle">
+                Your Virtual Assistant
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
 st.divider()
 
