@@ -24,19 +24,7 @@ st.set_page_config(
 st.markdown("""
 <style>
 
-/* Bot Bubble */
-.bot-box {
-    background: #f5f7fb;
-    padding: 14px 18px;
-    border-radius: 18px 18px 18px 6px;
-    border: 1px solid #e2e8f0;
-    max-width: 75%;
-    color: #222;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
+
 
 /* User Bubble */
 .user-box {
