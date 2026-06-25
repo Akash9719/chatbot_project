@@ -22,7 +22,10 @@ st.set_page_config(
 # -----------------------
 
 # Load External CSS
-with open("style.css") as f:
+current_dir = os.path.dirname(__file__)
+css_file = os.path.join(current_dir, "style.css")
+
+with open(css_file, "r", encoding="utf-8") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # ==========================
