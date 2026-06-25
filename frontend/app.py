@@ -32,39 +32,6 @@ with open(css_file, encoding="utf-8") as f:
     )
 
 # -----------------------
-# Header
-# -----------------------
-
-header = st.container()
-
-with header:
-
-    col1, col2 = st.columns([1,6])
-
-    with col1:
-        st.image(
-            "https://rishikirti.com/images/kirti-ai.png",
-            width=52
-        )
-
-    with col2:
-
-        st.markdown(
-            """
-            <div class="header-title">
-                KIRTI
-            </div>
-
-            <div class="header-subtitle">
-                Your Virtual Assistant
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-
-st.divider()
-
-# -----------------------
 # Secrets Helper
 # -----------------------
 def get_secret(key):
