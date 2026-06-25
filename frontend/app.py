@@ -315,3 +315,5 @@ if st.session_state.show_form:
                 st.error(f"Error saving leads: {str(e)}")
         else:
             st.warning("Please fill all fields and accept consent")
+
+st.markdown("</div>", unsafe_allow_html=True)
