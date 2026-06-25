@@ -18,7 +18,7 @@ st.set_page_config(
 )
 
 # -----------------------
-# Display Chat
+# Load CSS
 # -----------------------
 
 # Load External CSS
@@ -32,23 +32,24 @@ with open(css_file, "r", encoding="utf-8") as f:
 # Chat Header
 # ==========================
 
-st.markdown("""
-<div class="chat-header">
-    <img src="https://rishikirti.com/images/kirti-ai.png">
+col1, col2 = st.columns([1, 6])
 
-    <div>
-        <div class="chat-title">
-            KIRTI
-        </div>
+with col1:
+    st.image(
+        "https://rishikirti.com/images/kirti-ai.png",
+        width=45
+    )
 
-        <div class="chat-subtitle">
-            Your Virtual Assistant
-        </div>
+with col2:
+    st.markdown("""
+    <h3 style="margin-bottom:0;">KIRTI</h3>
+    <p style="margin-top:-10px;color:#dbeafe;">
+        Your Virtual Assistant
 
-    </div>
+    </p>
+    """, unsafe_allow_html=True)
 
-</div>
-""", unsafe_allow_html=True)
+st.divider()
 
 # -----------------------
 # Secrets Helper
