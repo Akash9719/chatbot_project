@@ -22,7 +22,7 @@ st.set_page_config(
 # -----------------------
 
 # Load External CSS
-
+with open("style.css") as f:
 
 # -----------------------
 # Secrets Helper
