@@ -25,10 +25,6 @@ st.markdown("""
 <style>
 
 
-</style>
-""", unsafe_allow_html=True)
-
-
 # -----------------------
 # Secrets Helper
 # -----------------------
