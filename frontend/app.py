@@ -317,7 +317,6 @@ if st.session_state.show_form:
         else:
             st.warning("Please fill all fields and accept consent")
 
-st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("""
 <div style="text-align:center;
