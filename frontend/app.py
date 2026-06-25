@@ -317,3 +317,14 @@ if st.session_state.show_form:
             st.warning("Please fill all fields and accept consent")
 
 st.markdown("</div>", unsafe_allow_html=True)
+
+st.markdown("""
+<div style="text-align:center;
+font-size:12px;
+color:#7f8c8d;
+padding:10px;">
+
+Powered by <b>RishiKirti AI</b>
+
+</div>
+""", unsafe_allow_html=True)
