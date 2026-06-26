@@ -73,18 +73,12 @@ st.markdown("""
 =========================== */
 
 [data-testid="stChatMessageAvatarAssistant"] img{
-
-    width:44px !important;
-
-    height:44px !important;
-
+    width:34px !important;
+    height:34px !important;
     border-radius:50%;
-
 }
 [data-testid="stChatMessageAvatarUser"]{
-
     font-size:26px;
-
 }
 
 /* ===========================
