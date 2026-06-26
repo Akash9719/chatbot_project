@@ -365,3 +365,9 @@ section.main > div {
 [data-testid="stMarkdownContainer"] ul{
     margin-top:0.3rem;
 }
+
+/* Reduce Vertical Space */
+
+[data-testid="stVerticalBlock"]{
+    gap:.3rem;
+}
