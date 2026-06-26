@@ -27,29 +27,25 @@ html, body, [class*="css"]{
 /* ===========================
    HEADER
 =========================== */
-/* HEADER */
+st.markdown("""
+<div class="assistant-card">
 
-[data-testid="stHorizontalBlock"]{
-background:#0B66FF;
-padding:18px;
-border-radius:18px 18px 0 0;
-margin-bottom:0;
-box-shadow:0 8px 20px rgba(0,0,0,.12);
-}
+    <img src="https://rishikirti.com/images/kirti-ai.png" class="assistant-avatar">
 
-.header-title{
-font-size:24px;
-font-weight:700;
-color:white;
-margin-top:2px;
-}
+    <div>
 
-.header-subtitle{
-font-size:14px;
-color:#dbeafe;
-margin-top:-3px;
-}
+        <div class="assistant-name">
+            KIRTI
+        </div>
 
+        <div class="assistant-role">
+            AI Virtual Assistant
+        </div>
+
+    </div>
+
+</div>
+""", unsafe_allow_html=True)
 /* ===========================
    CHAT AREA
 =========================== */
