@@ -101,7 +101,6 @@ st.markdown("""
 /* ===========================
    USER MESSAGE
 =========================== */
-/* User */
 
 [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]){
     justify-content:flex-end;
@@ -118,9 +117,6 @@ st.markdown("""
     line-height:1.6;
 }
 
-/* ===========================
-   INPUT BOX
-=========================== */
 /* ===================================
    CHAT INPUT
 =================================== */
