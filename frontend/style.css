@@ -1,27 +1,22 @@
 /* ===========================
    IMPORT FONT
 =========================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 html, body, [class*="css"]{
     font-family: 'Poppins', sans-serif;
 }
 
-
 /* ===========================
    APP BACKGROUND
 =========================== */
-
 .stApp{
     background:#f3f6fb;
 }
 
-
 /* ===========================
    MAIN CHAT CONTAINER
 =========================== */
-
 .block-container{
     max-width:380px;
     margin:auto;
@@ -29,52 +24,35 @@ html, body, [class*="css"]{
     padding-bottom:1rem;
 }
 
-
 /* ===========================
    HEADER
 =========================== */
 /* HEADER */
 
 [data-testid="stHorizontalBlock"]{
-
 background:#0B66FF;
-
 padding:18px;
-
 border-radius:18px 18px 0 0;
-
 margin-bottom:0;
-
 box-shadow:0 8px 20px rgba(0,0,0,.12);
-
 }
 
 .header-title{
-
 font-size:24px;
-
 font-weight:700;
-
 color:white;
-
 margin-top:2px;
-
 }
 
 .header-subtitle{
-
 font-size:14px;
-
 color:#dbeafe;
-
 margin-top:-3px;
-
 }
 
 /* ===========================
    CHAT AREA
 =========================== */
-
 .chat-body{
 
     background:white;
@@ -86,7 +64,6 @@ margin-top:-3px;
     box-shadow:0 8px 25px rgba(0,0,0,.08);
 
 }
-
 
 /* ===========================
    STREAMLIT CHAT MESSAGE
@@ -104,7 +81,6 @@ margin-top:-3px;
 
 }
 
-
 /* ===========================
    AVATARS
 =========================== */
@@ -118,13 +94,11 @@ margin-top:-3px;
     border-radius:50%;
 
 }
-
 [data-testid="stChatMessageAvatarUser"]{
 
     font-size:26px;
 
 }
-
 
 /* ===========================
    BOT MESSAGE
