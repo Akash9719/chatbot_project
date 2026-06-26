@@ -372,3 +372,62 @@ section.main > div {
 section.main > div {
     padding-bottom: 0 !important;
 }
+/* ===========================
+   Assistant Card
+=========================== */
+
+.assistant-card{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+background:white;
+
+padding:14px;
+
+border-radius:14px;
+
+margin-bottom:12px;
+
+box-shadow:0 2px 10px rgba(0,0,0,.06);
+
+border:1px solid #eef2f7;
+
+}
+
+.assistant-avatar{
+
+width:46px;
+
+height:46px;
+
+border-radius:50%;
+
+border:2px solid #0B66FF;
+
+object-fit:cover;
+
+}
+
+.assistant-name{
+
+font-size:18px;
+
+font-weight:700;
+
+color:#1f2937;
+
+}
+
+.assistant-role{
+
+font-size:13px;
+
+color:#6b7280;
+
+margin-top:2px;
+
+}
