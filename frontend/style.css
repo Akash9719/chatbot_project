@@ -394,12 +394,16 @@ hr{
     padding-top: 6px !important;
     padding-bottom: 6px !important;
 }
-
 /* Remove bottom whitespace */
 section.main > div {
     padding-bottom: 0 !important;
 }
-
+}
 }
 
+.main .block-container {
+    padding-bottom: 0rem !important;
+}
+section.main > div {
+    padding-bottom: 0 !important;
 }
