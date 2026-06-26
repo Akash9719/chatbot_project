@@ -169,31 +169,19 @@ st.markdown("""
 =========================== */
 
 .stButton button{
-
-    width:100%;
-
-    border-radius:25px;
-
-    background:#0B66FF;
-
-    color:white;
-
-    border:none;
-
-    padding:10px;
-
-    font-weight:600;
-
-    transition:.3s;
-
+    width:42px;
+    height:42px;
+    border-radius:50% !important;
+    background:#0B66FF !important;
+    color:white !important;
+    border:none !important;
+    transition:.25s;
 }
 
-.stButton button:hover{
-
-    background:#0050cc;
-
+[data-testid="stChatInput"] button:hover{
+    background:#0054d1 !important;
+    transform:scale(1.05);
 }
-
 
 /* ===========================
    FORM
