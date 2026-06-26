@@ -366,6 +366,40 @@ hr{
 
     border-radius:0px;
 
+/* ===========================
+   REMOVE EXTRA WHITESPACE
+=========================== */
+
+/* Remove top padding */
+.block-container {
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+}
+
+/* Remove space above first message */
+[data-testid="stVerticalBlock"] > div:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Reduce spacing between messages */
+[data-testid="stChatMessage"] {
+    margin: 2px 0 !important;
+    padding: 2px 0 !important;
+}
+
+/* Reduce gap above chat input */
+[data-testid="stChatInput"] {
+    margin-top: 0 !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+}
+
+/* Remove bottom whitespace */
+section.main > div {
+    padding-bottom: 0 !important;
+}
+
 }
 
 }
