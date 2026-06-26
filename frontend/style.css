@@ -61,15 +61,11 @@ st.markdown("""
 =========================== */
 
 [data-testid="stChatMessage"]{
-
-    background:none !important;
-
+    background:transparent !important;
     border:none !important;
-
     box-shadow:none !important;
-
-    padding:8px 0px;
-
+    margin:6px 0 !important;
+    padding:0 !important;
 }
 
 /* ===========================
