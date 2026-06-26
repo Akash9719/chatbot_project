@@ -90,34 +90,20 @@ st.markdown("""
 /* ===========================
    BOT MESSAGE
 =========================== */
-
+/* Assistant */
 [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]){
-
-    display:flex;
-
+    align-items:flex-start;
 }
-
 [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]) [data-testid="stMarkdownContainer"]{
-
-    background:#eef3fb;
-
+    background:#F5F7FB;
+    border:1px solid #E5EAF2;
     border-radius:18px 18px 18px 6px;
-
-    padding:14px 18px;
-
-    box-shadow:0 3px 8px rgba(0,0,0,.08);
-
-    max-width:80%;
-
-    color:#222;
-
-    font-size:15px;
-
-    line-height:1.7;
-
+    padding:12px 15px;
+    max-width:84%;
+    box-shadow:0 2px 6px rgba(0,0,0,.05);
+    line-height:1.6;
+    font-size:14px;
 }
-
-
 /* ===========================
    USER MESSAGE
 =========================== */
