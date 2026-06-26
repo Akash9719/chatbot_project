@@ -107,35 +107,22 @@ st.markdown("""
 /* ===========================
    USER MESSAGE
 =========================== */
+/* User */
 
 [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]){
-
-    display:flex;
-
     justify-content:flex-end;
-
 }
 
 [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) [data-testid="stMarkdownContainer"]{
-
     background:#0B66FF;
-
     color:white;
-
     border-radius:18px 18px 6px 18px;
-
-    padding:14px 18px;
-
-    box-shadow:0 3px 8px rgba(0,0,0,.12);
-
-    max-width:80%;
-
-    font-size:15px;
-
-    line-height:1.7;
-
+    padding:12px 15px;
+    max-width:84%;
+    box-shadow:0 2px 8px rgba(11,102,255,.18);
+    font-size:14px;
+    line-height:1.6;
 }
-
 
 /* ===========================
    INPUT BOX
