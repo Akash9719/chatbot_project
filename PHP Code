@@ -92,6 +92,8 @@ document.getElementById('rk-chat-btn').onclick = function(){
                 transform:"translateY(20px) scale(.95)"
             },
             {
+                opacity:1,
+                transform:"translateY(0px) scale(1)"
     document.getElementById('rk-chat-box').style.display = 'block';
 };
  
