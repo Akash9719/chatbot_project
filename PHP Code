@@ -1,1 +1,95 @@
+<!-- RishiKirti AI Chat Widget -->
+ 
+<button id="rk-chat-btn">💬</button>
+ 
+<div id="rk-chat-box">
+<div id="rk-chat-header">
+        RishiKirti AI Assistant
+<span id="rk-close">✕</span>
+</div>
+ 
+    <iframe
+        src="https://chatbot-project-wk3p.onrender.com"
+        frameborder="0">
+</iframe>
+</div>
+ 
+<style>
+#rk-chat-btn{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:45%;
+    background:#0b5ed7;
+    color:#fff;
+    font-size:25px;
+    cursor:pointer;
+    z-index:999999;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+}
 
+#rk-chat-btn:hover{
+
+    transform:scale(1.08);
+
+}
+ 
+#rk-chat-box{
+    position:fixed;
+    bottom:90px;
+    right:20px;
+    width:350px;
+    height:550px;
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    display:none;
+    z-index:999999;
+    box-shadow:0 12px 35px rgba(0,0,0,.18);
+}
+ 
+#rk-chat-header{
+    height:50px;
+    background:#0b5ed7;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 16px;
+    font-size:16px;
+    font-weight:590;
+}
+ 
+#rk-close{
+    cursor:pointer;
+}
+ 
+#rk-chat-box iframe{
+    width:100%;
+    height:calc(100% - 55px);
+}
+ 
+@media(max-width:768px){
+    #rk-chat-box{
+        width:95%;
+        height:80%;
+        right:2.5%;
+    }
+}
+</style>
+ 
+<script>
+const chatBox = document.getElementById('rk-chat-box');
+document.getElementById('rk-chat-btn').onclick = function(){
+    chatBox.style.display = "block";
+    chatBox.animate(
+    document.getElementById('rk-chat-box').style.display = 'block';
+};
+ 
+document.getElementById('rk-close').onclick = function(){
+    document.getElementById('rk-chat-box').style.display = 'none';
+};
+</script>
