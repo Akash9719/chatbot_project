@@ -90,6 +90,8 @@ document.getElementById('rk-chat-btn').onclick = function(){
             {
                 opacity:0,
                 transform:"translateY(20px) scale(.95)"
+            },
+            {
     document.getElementById('rk-chat-box').style.display = 'block';
 };
  
