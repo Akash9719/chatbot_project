@@ -97,6 +97,9 @@ document.getElementById('rk-chat-btn').onclick = function(){
             }
         ],
         {
+            duration:220,
+            easing:"ease-out"
+        }
     document.getElementById('rk-chat-box').style.display = 'block';
 };
  
