@@ -86,6 +86,7 @@ const chatBox = document.getElementById('rk-chat-box');
 document.getElementById('rk-chat-btn').onclick = function(){
     chatBox.style.display = "block";
     chatBox.animate(
+        [
     document.getElementById('rk-chat-box').style.display = 'block';
 };
  
