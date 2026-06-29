@@ -88,6 +88,7 @@ document.getElementById('rk-chat-btn').onclick = function(){
     chatBox.animate(
         [
             {
+                opacity:0,
     document.getElementById('rk-chat-box').style.display = 'block';
 };
  
