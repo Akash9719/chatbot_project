@@ -101,6 +101,7 @@ document.getElementById('rk-chat-btn').onclick = function(){
             easing:"ease-out"
         }
     );
+};
     document.getElementById('rk-chat-box').style.display = 'block';
 };
  
