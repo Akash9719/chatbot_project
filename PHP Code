@@ -102,8 +102,6 @@ document.getElementById('rk-chat-btn').onclick = function(){
         }
     );
 };
-    document.getElementById('rk-chat-box').style.display = 'block';
-};
  
 document.getElementById('rk-close').onclick = function(){
     document.getElementById('rk-chat-box').style.display = 'none';
