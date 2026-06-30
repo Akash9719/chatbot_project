@@ -27,25 +27,7 @@ html, body, [class*="css"]{
 /* ===========================
    HEADER
 =========================== */
-st.markdown("""
-<div class="assistant-card">
 
-    <img src="https://rishikirti.com/images/kirti-ai.png" class="assistant-avatar">
-
-    <div>
-
-        <div class="assistant-name">
-            KIRTI
-        </div>
-
-        <div class="assistant-role">
-            AI Virtual Assistant
-        </div>
-
-    </div>
-
-</div>
-""", unsafe_allow_html=True)
 /* ===========================
    CHAT AREA
 =========================== */
