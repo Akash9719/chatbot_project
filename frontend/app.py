@@ -121,7 +121,7 @@ if "show_form" not in st.session_state:
 
 for msg in st.session_state.messages:
     avatar = (
-        "https://rishikirti.com/images/kirti-ai.png"
+        "https://rishikirti.com/image/Kirti.png"
         if msg["role"] == "assistant"
         else "👤"
     )
