@@ -7,15 +7,17 @@ import gspread
 from google.oauth2.service_account import Credentials
 import json
 from datetime import datetime
+from PIL import Image
 
 # -----------------------
 # Page Setup
 # -----------------------
+icon = Image.open("Kirti.png")
 
 st.set_page_config(
     page_title="RishiKirti AI Assistant",
-    page_icon="image/Kirti.png",
-    layout="wide"
+    page_icon=icon,
+    layout="centered"
 )
 
 # -----------------------
