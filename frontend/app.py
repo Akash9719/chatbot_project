@@ -15,6 +15,9 @@ from pathlib import Path
 # -----------------------
 icon = Image.open("Kirti.png")
 BASE_DIR = Path(__file__).parent
+print(BASE_DIR)
+print(BASE_DIR.iterdir())
+
 icon = Image.open(BASE_DIR / "Kirti.png")
 
 st.set_page_config(
