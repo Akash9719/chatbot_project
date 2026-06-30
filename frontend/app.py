@@ -15,10 +15,11 @@ from pathlib import Path
 # -----------------------
 icon = Image.open("Kirti.png")
 BASE_DIR = Path(__file__).parent
+icon = Image.open(BASE_DIR / "Kirti.png")
 
 st.set_page_config(
     page_title="RishiKirti AI Assistant",
-    icon = Image.open(BASE_DIR / "Kirti.png")
+    page_icon=icon,
     layout="centered"
 )
 
