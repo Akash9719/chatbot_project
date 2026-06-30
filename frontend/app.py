@@ -15,7 +15,7 @@ from datetime import datetime
 st.set_page_config(
     page_title="RishiKirti AI Assistant",
     page_icon="💬",
-    layout="wide"
+    layout="centered"
 )
 
 # -----------------------
