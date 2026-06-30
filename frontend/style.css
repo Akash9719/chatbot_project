@@ -220,7 +220,7 @@ hr{
 
 [data-testid="stChatMessage"]{
 
-    animation:fadeIn .25s ease;
+    animation:fadeIn .10s ease;
 
 }
 
