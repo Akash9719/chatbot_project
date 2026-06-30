@@ -8,15 +8,17 @@ from google.oauth2.service_account import Credentials
 import json
 from datetime import datetime
 from PIL import Image
+from pathlib import Path
 
 # -----------------------
 # Page Setup
 # -----------------------
 icon = Image.open("Kirti.png")
+BASE_DIR = Path(__file__).parent
 
 st.set_page_config(
     page_title="RishiKirti AI Assistant",
-    page_icon=icon,
+    icon = Image.open(BASE_DIR / "Kirti.png")
     layout="centered"
 )
 
