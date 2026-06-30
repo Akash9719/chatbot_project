@@ -265,7 +265,7 @@ User Query:
 
     with st.chat_message(
         "assistant",
-        avatar="https://rishikirti.com/images/kirti-ai.png"
+        avatar="D:\Websites\Rishikirti\image\Kirti.png"
     ):
         st.markdown(bot_reply)
 
